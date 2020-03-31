@@ -35,3 +35,20 @@ $(document).ready(function () {
 
     }, 5000));
 });
+
+
+// ------------------- Example 3: check if one string contains other ------------------------- //
+var checkExistency = (titletext, highilitedtext) => {
+    console.log(highilitedtext.replace(/<\/?[^>]+(>|$)/g, ""))
+    // use this if you want to replace html tags and then check if existency
+    return highilitedtext.replace(/<\/?[^>]+(>|$)/g, "").includes(titletext);
+    // use this if you do not want to replace html tags from highilited text
+    // return highilitedtext.includes(titletext);
+}
+
+$(document).ready(function () { 
+    $("#button2").click(function (e) { 
+        let isexists = checkExistency("diaverum","<em>Understanding</em><em>diaverum</em>");
+        console.log(isexists);
+    });
+ });
